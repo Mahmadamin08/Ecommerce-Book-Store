@@ -1,23 +1,22 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import Title from './components/Title';
+import About from './pages/About';
+import Home from './pages/Home';
 
 function App() {
+
+  const [home, sethome] = useState(false);
+  const [about, setAbout] = useState(false);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {/* <h1>fsgf</h1> */}
+      <button onClick={() =>{ sethome(!home); setAbout(false)} }>Home</button>
+      <button onClick={() =>{ setAbout(!about) ; sethome(false)}}>About</button>
+      <h1>
+        {home ? <Home /> : ""}
+      </h1>
+      {about ? <About /> : ""}
     </div>
   );
 }

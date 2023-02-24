@@ -6,8 +6,9 @@ const Counter = () => {
     return (
         <div>
             <button onClick={()=>setNum(num+1)} >Increment</button>
+            <h2>{num}</h2>
         </div>
     )
 }
 
-export default Counter
+export default Counter;

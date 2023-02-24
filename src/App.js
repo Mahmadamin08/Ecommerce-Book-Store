@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './App.css';
+import Counter from './components/Counter';
 import Title from './components/Title';
 import About from './pages/About';
 import Home from './pages/Home';
@@ -11,8 +12,9 @@ function App() {
   return (
     <div>
       {/* <h1>fsgf</h1> */}
-      <button onClick={() =>{ sethome(!home); setAbout(false)} }>Home</button>
-      <button onClick={() =>{ setAbout(!about) ; sethome(false)}}>About</button>
+      <button onClick={() => { sethome(!home); setAbout(false) }}>Home</button>
+      <button onClick={() => { setAbout(!about); sethome(false) }}>About</button>
+      <Counter />
       <h1>
         {home ? <Home /> : ""}
       </h1>
